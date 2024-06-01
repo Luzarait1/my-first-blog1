@@ -9,22 +9,13 @@
             <h2>Bienvenidos al blog de Luzarait :D</h2>
         </div>
 
-        <div>
-            <p>Hoy es Junio 6, 2024. Estamos con Yuricik, Dansalyan, y Ana Maria en la universida EAFIT con Django Girls</p>
-            <h2><a href="">Mi Primer Post</a></h2>
-            <p>Aqui, estoy creando mi primer post</p>
-            <em>Este es un texto en cursiva</em>
-            <br>
-            <strong>Este es un texto en negrita</strong>
-
-        </div>
-
-        <div>
-            <h2><a href="">Mi Segundo Post</a></h2>
-            <p>Aqui, estoy creando mi segundo post</p>
-            <p>A continuacion hay un link</p>
-            <a href="https://djangogirls.org">Pagida de Django Girls</a>
-            <ul><li>Punto uno</li><li>Punto dos</li><li>Punto tres</li></ul>
-        </div>
+        {% for post in posts %}
+    <div>
+        <p> publicado: {{ post.published_date }}</p>
+        <h2><a href="">{{ post.title }}</a></h2>
+        <p>{{ post.text|linebreaksbr }}</p>
+    </div>
+    {% endfor %}
+    
     </body>
 </html>
